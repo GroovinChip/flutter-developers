@@ -88,7 +88,9 @@ class _GroovinChipPageState extends State<GroovinChipPage> {
                             children: <Widget>[
                               IconButton(
                                 icon: Icon(
-                                  GroovinMaterialIcons.google_play,
+                                  Theme.of(context).platform == TargetPlatform.android ?
+                                    GroovinMaterialIcons.google_play :
+                                    Icons.file_download,
                                   color: Colors.green,
                                 ),
                                 tooltip: "Install from Google Play",
