@@ -86,18 +86,18 @@ class _GroovinChipPageState extends State<GroovinChipPage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              IconButton(
-                                icon: Icon(
-                                  Theme.of(context).platform == TargetPlatform.android ?
-                                    GroovinMaterialIcons.google_play :
-                                    Icons.file_download,
-                                  color: Colors.green,
-                                ),
-                                tooltip: "Install from Google Play",
-                                onPressed: () {
-                                  launch("https://play.google.com/store/apps/details?id=com.groovinchip.flutter.callmanager");
-                                },
-                              ),
+                              Theme.of(context).platform == TargetPlatform.android ?
+                                IconButton(
+                                  icon: Icon(
+                                    GroovinMaterialIcons.google_play,
+                                    color: Colors.green,
+                                  ),
+                                  tooltip: "Install from Google Play",
+                                  onPressed: () {
+                                    launch("https://play.google.com/store/apps/details?id=com.groovinchip.flutter.callmanager");
+                                  },
+                                )
+                              : Container(),
                               IconButton(
                                 icon: Icon(
                                   GroovinMaterialIcons.xda,
